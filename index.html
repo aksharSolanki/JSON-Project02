@@ -20,8 +20,32 @@
             //FUNCTION TO GET JSON OBJECTS
             function GetLaptops() {
                 $.ajax({
-                    url: 'laptops.json'
+                    url: 'laptops.json',
+                    type: 'GET',
+                    datatype: 'json',
+                    success: function(data) {
+                        DisplayLaptops(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
                 });
+            }
+            function DisplayLaptops(jsonFile) {
+                var image_source = "";
+                var output = "";
+                $(jsonFile.laptops).each(function(index) {
+                    output += "ID: " + jsonFile.laptops[index].id + "<br>";
+                    output += "Brand: " + jsonFile.laptops[index].Brand + "<br>";
+                    output += "Price: " + jsonFile.laptops[index].Price + "<br>";
+                    output += "CPU: " + jsonFile.laptops[index].CPU + "<br>";
+                    output += "GPU: " + jsonFile.laptops[index].GPU + "<br>";
+                    output += "RAM: " + jsonFile.laptops[index].RAM + "<br>";
+                    output += "Storage: " + jsonFile.laptops[index].Storage + "<br>";
+                    output += "OS: " + jsonFile.laptops[index].OS + "<br>";
+                    //image_source = jsonFile.laptops[index].photo;
+                })  
+                document.getElementById('laptops').innerHTML = output;
             }
         </script>
     </body>
