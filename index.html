@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1>Choose From the Best Range of Laptops</h1>
-        </header>
-        <main>
-            <div id="laptops">
-                <button id="btnShowLaptops" onclick="GetLaptops()">Show Laptops</button>
-                <div id="laptopResult">
 
-                </div>
-            </div>
-        </main>
-        <footer>
+<head>
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
 
-        </footer>
-        <script>
-            //FUNCTION TO GET JSON OBJECTS
-            function GetLaptops() {
-                $.ajax({
-                    url: 'laptops.json',
-                    type: 'GET',
-                    datatype: 'json',
-                    success: function(data) {
-                        DisplayLaptops(data);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        alert(textStatus);
-                    }
-                });
-            }
-            function DisplayLaptops(jsonFile) {
-                var image_source = "";
-                var output = "";
-                $(jsonFile.laptops).each(function(index) {
-                    output += "ID: " + jsonFile.laptops[index].id + "<br>";
-                    output += "Brand: " + jsonFile.laptops[index].Brand + "<br>";
-                    output += "Price: " + jsonFile.laptops[index].Price + "<br>";
-                    output += "CPU: " + jsonFile.laptops[index].CPU + "<br>";
-                    output += "GPU: " + jsonFile.laptops[index].GPU + "<br>";
-                    output += "RAM: " + jsonFile.laptops[index].RAM + "<br>";
-                    output += "Storage: " + jsonFile.laptops[index].Storage + "<br>";
-                    output += "OS: " + jsonFile.laptops[index].OS + "<br>";
-                    //image_source = jsonFile.laptops[index].photo;
-                })  
-                document.getElementById('laptopResult').innerHTML = output;
-            }
-        </script>
-    </body>
+<body>
+    <header>
+        <h1>Choose From the Best Range of Laptops</h1>
+    </header>
+    <main>
+        <div id="laptops">
+            <button id="btnShowLaptops" onclick="GetLaptops()">Show Laptops</button>
+                <table id="laptopTable" border="2">
+
+                </table>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        //FUNCTION TO GET JSON OBJECTS
+        function GetLaptops() {
+            $.ajax({
+                url: 'laptops.json',
+                type: 'GET',
+                datatype: 'json',
+                success: function (data) {
+                    DisplayLaptops(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+        }
+        function DisplayLaptops(jsonFile) {
+            var image_source = "";
+            var output = "<tr>";
+            output += "<th>ID</th>";
+            output += "<th>Brand</th>";
+            output += "<th>Price</th>";
+            output += "<th>CPU</th>";
+            output += "<th>GPU</th>";
+            output += "<th>RAM</th>";
+            output += "<th>Storage</th>";
+            output += "<th>OS</th>";
+            output += "</tr>";
+            $(jsonFile.laptops).each(function (index) {
+                output += "<tr>";
+                output += "<td>" + jsonFile.laptops[index].id + "</tr>";
+                output += "<td>" + jsonFile.laptops[index].Brand + "</tr>";
+                output += "<td>" + jsonFile.laptops[index].Price + "</tr>";
+                output += "<td>" + jsonFile.laptops[index].CPU + "</td>";
+                output += "<td>" + jsonFile.laptops[index].GPU + "</td>";
+                output += "<td>" + jsonFile.laptops[index].RAM + "</td>";
+                output += "<td>" + jsonFile.laptops[index].Storage + "</td>";
+                output += "<td>" + jsonFile.laptops[index].OS + "</td>";
+                //image_source = jsonFile.laptops[index].photo;
+                output += "</tr>";
+            })
+            document.getElementById('laptopTable').innerHTML = output;
+        }
+    </script>
+</body>
+
 </html>
