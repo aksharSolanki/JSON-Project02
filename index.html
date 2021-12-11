@@ -10,7 +10,10 @@
         </header>
         <main>
             <div id="laptops">
+                <button id="btnShowLaptops" onclick="GetLaptops()">Show Laptops</button>
+                <div id="laptopResult">
 
+                </div>
             </div>
         </main>
         <footer>
@@ -45,7 +48,7 @@
                     output += "OS: " + jsonFile.laptops[index].OS + "<br>";
                     //image_source = jsonFile.laptops[index].photo;
                 })  
-                document.getElementById('laptops').innerHTML = output;
+                document.getElementById('laptopResult').innerHTML = output;
             }
         </script>
     </body>
