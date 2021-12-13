@@ -164,6 +164,7 @@
         info += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
         info += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
         if(id == 0) {
+            //$("[id=0]").removeData(info);
             $("[id=0]").append(info);
         } else if(id == 1) {
             $("[id=1]").append(info);
