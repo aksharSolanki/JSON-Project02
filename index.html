@@ -134,19 +134,24 @@
             $("[id=0]").replaceWith(info);
         });
         $("#1").click(function () {
-            expandInfo(json, 1);
+            var info = expandInfo(json, 1);
+            $("[id=1]").replaceWith(info);
         });
         $("#2").click(function () {
-            expandInfo(json, 2);
+            var info = expandInfo(json, 2);
+            $("[id=2]").replaceWith(info);
         });
         $("#3").click(function () {
-            expandInfo(json, 3);
+            var info = expandInfo(json, 3);
+            $("[id=3]").replaceWith(info);
         });
         $("#4").click(function () {
-            expandInfo(json, 4);
+            var info = expandInfo(json, 4);
+            $("[id=4]").replaceWith(info);
         });
         $("#5").click(function () {
-            expandInfo(json, 5);
+            var info = expandInfo(json, 5);
+            $("[id=5]").replaceWith(info);
         });
 
     }
@@ -162,21 +167,6 @@
         info.innerHTML += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
         info.innerHTML += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
         return info;
-        // if (id == 0) {
-        //     $("[id=0]").replaceWith(info);
-        // } else if (id == 1) {
-        //     $("[id=1]").replaceWith(info);
-        // } else if (id == 2) {
-        //     $("[id=2]").replaceWith(info);
-        // } else if (id == 3) {
-        //     $("[id=3]").replaceWith(info);
-        // } else if (id == 4) {
-        //     $("[id=4]").replaceWith(info);
-        // } else if (id == 5) {
-        //     $("[id=5]").replaceWith(info);
-        // } else {
-        //     alert("Error");
-        // }
     }
 
     function remove() {
