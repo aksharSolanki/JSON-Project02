@@ -161,15 +161,15 @@
 
     }
 
-    function expandInfo(json, id) {
+    function expandInfo(json, num) {
         var info = "";
-        info += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
-        info += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
-        info += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
-        info += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
-        info += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
-        info += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
-        $("[id=0]").append(info);
+        info += "<strong>Price: </strong>" + json.laptops[num].Price + "<br>";
+        info += "<strong>CPU: </strong>" + json.laptops[num].CPU + "<br>";
+        info += "<strong>GPU: </strong>" + json.laptops[num].GPU + "<br>";
+        info += "<strong>RAM: </strong>" + json.laptops[num].RAM + "<br>";
+        info += "<strong>Storage: </strong>" + json.laptops[num].Storage + "<br>";
+        info += "<strong>OS: </strong>" + json.laptops[num].OS + "<br>";
+        $("[id=num]").append(info);
     }
 
     function remove() {
