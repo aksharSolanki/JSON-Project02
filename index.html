@@ -130,7 +130,8 @@
         //https://tyler-meira.github.io/Project02/index.html
 
         $("#0").click(function () {
-            expandInfo(json, 0);
+            var info = expandInfo(json, 0);
+            $("[id=0]").replaceWith(info);
         });
         $("#1").click(function () {
             expandInfo(json, 1);
@@ -152,7 +153,6 @@
 
     function expandInfo(json, id) {
         var info = document.createElement("p");
-        info.setAttribute("id", (id+1));
         info.innerHTML += "<strong>Brand: </strong>" + json.laptops[id].Brand + "<br>";
         info.innerHTML += "<img src=" + json.laptops[id].photo + " style=\"width:200px;height:200px;\">" + "<br><br>";
         info.innerHTML += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
@@ -161,21 +161,22 @@
         info.innerHTML += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
         info.innerHTML += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
         info.innerHTML += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
-        if (id == 0) {
-            $("[id=0]").replaceWith(info);
-        } else if (id == 1) {
-            $("[id=1]").replaceWith(info);
-        } else if (id == 2) {
-            $("[id=2]").replaceWith(info);
-        } else if (id == 3) {
-            $("[id=3]").replaceWith(info);
-        } else if (id == 4) {
-            $("[id=4]").replaceWith(info);
-        } else if (id == 5) {
-            $("[id=5]").replaceWith(info);
-        } else {
-            alert("Error");
-        }
+        return info;
+        // if (id == 0) {
+        //     $("[id=0]").replaceWith(info);
+        // } else if (id == 1) {
+        //     $("[id=1]").replaceWith(info);
+        // } else if (id == 2) {
+        //     $("[id=2]").replaceWith(info);
+        // } else if (id == 3) {
+        //     $("[id=3]").replaceWith(info);
+        // } else if (id == 4) {
+        //     $("[id=4]").replaceWith(info);
+        // } else if (id == 5) {
+        //     $("[id=5]").replaceWith(info);
+        // } else {
+        //     alert("Error");
+        // }
     }
 
     function remove() {
