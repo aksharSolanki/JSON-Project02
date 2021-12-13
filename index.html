@@ -167,7 +167,7 @@
 
     function expandInfo(json, id) {
         var expand = document.getElementById('expand');
-        var output = "";
+        var output = document.createElement('p');
         output.innerHTML += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
         output.innerHTML += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
         output.innerHTML += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
