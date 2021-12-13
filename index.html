@@ -133,23 +133,18 @@
             expandInfo(json, 0);
         });
         $("#1").click(function () {
-            alert("2nd element clicked");
             expandInfo(json, 1);
         });
         $("#2").click(function () {
-            alert("3rd element cliked");
             expandInfo(json, 2);
         });
         $("#3").click(function () {
-            alert("4th element clicked");
             expandInfo(json, 3);
         });
         $("#4").click(function () {
-            alert("5th element clicked");
             expandInfo(json, 4);
         });
         $("#5").click(function () {
-            alert("5th element clicked");
             expandInfo(json, 5);
         });
 
@@ -176,8 +171,10 @@
             $("[id=3]").replaceWith(info);
         } else if (id == 4) {
             $("[id=4]").replaceWith(info);
-        } else {
+        } else if (id == 5) {
             $("[id=5]").replaceWith(info);
+        } else {
+            alert("Error");
         }
     }
 
