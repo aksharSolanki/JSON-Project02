@@ -72,6 +72,7 @@
 </body>
 
 <script>
+    var counter = 0;
 
     //Json Processing
     function GetJson() {
@@ -93,14 +94,12 @@
             });
     }
     function displayJson(json) {
-
         $.each(json.laptops, function (i, obj) {
             obj.Price += "$";
         });
 
         var div = document.getElementById("output");
 
-        var counter = 0;
         for (const x in json.laptops) {
 
             //Creates new elements using dom maniuplation then adds info to those doms for each element inside the json file.
@@ -126,30 +125,37 @@
         // Index File
         //https://tyler-meira.github.io/Project02/index.html
 
-        $("#0").click(function () {
-            var info = expandInfo(json, 0);
-            $("[id=0]").replaceWith(info);
-        });
-        $("#1").click(function () {
-            var info = expandInfo(json, 1);
-            $("[id=1]").replaceWith(info);
-        });
-        $("#2").click(function () {
-            var info = expandInfo(json, 2);
-            $("[id=2]").replaceWith(info);
-        });
-        $("#3").click(function () {
-            var info = expandInfo(json, 3);
-            $("[id=3]").replaceWith(info);
-        });
-        $("#4").click(function () {
-            var info = expandInfo(json, 4);
-            $("[id=4]").replaceWith(info);
-        });
-        $("#5").click(function () {
-            var info = expandInfo(json, 5);
-            $("[id=5]").replaceWith(info);
-        });
+        for(i = 0; i < counter; i++) {
+            $("#i").click(function() {
+                var info = expandInfo(json, i);
+                $("[id=i]").replaceWith(info);
+            }); 
+        }
+
+        // $("#0").click(function () {
+        //     var info = expandInfo(json, 0);
+        //     $("[id=0]").replaceWith(info);
+        // });
+        // $("#1").click(function () {
+        //     var info = expandInfo(json, 1);
+        //     $("[id=1]").replaceWith(info);
+        // });
+        // $("#2").click(function () {
+        //     var info = expandInfo(json, 2);
+        //     $("[id=2]").replaceWith(info);
+        // });
+        // $("#3").click(function () {
+        //     var info = expandInfo(json, 3);
+        //     $("[id=3]").replaceWith(info);
+        // });
+        // $("#4").click(function () {
+        //     var info = expandInfo(json, 4);
+        //     $("[id=4]").replaceWith(info);
+        // });
+        // $("#5").click(function () {
+        //     var info = expandInfo(json, 5);
+        //     $("[id=5]").replaceWith(info);
+        // });
 
     }
 
