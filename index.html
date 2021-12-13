@@ -1,70 +1,180 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        
+            *{
+                text-align: center;
+                background-color: gainsboro;
+            }
+            button{
+                display:inline-block;
+                padding:0.35em 1.2em;
+                border:0.1em solid #FFFFFF;
+                margin:0 0.3em 0.3em 0;
+                border-radius:0.12em;
+                box-sizing: border-box;
+                text-decoration:none;
+                font-family:'Roboto',sans-serif;
+                font-weight:300;
+                color:#FFFFFF;
+                text-align:center;
+                transition: all 0.2s;
+                background-color: #000000;
+                }
+                button:hover{
+                color:#000000;
+                background-color:#FFFFFF;
+                }
+                .output{
+                    display: grid;
+                    grid-template-columns: auto auto auto auto;
+                    grid-gap: 10px;
+                }
+                p{
+                    border: solid;
+                    border-radius: 5%;
+                    padding: 7%;
+                    padding-bottom: 0%;
+                }
+                img{
+                    border: solid;
+                }
 
+    
+    </style>
 <head>
-    <title>Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Choose From the Best Range of Laptops</h1>
-    </header>
-    <main>
-        <div id="laptops">
-            <button id="btnShowLaptops" onclick="GetLaptops()">Show Laptops</button>
-                <table id="laptopTable" border="2">
+    <h1>Laptop Index</h1>
+    <hr>
+    <br>   
+    
 
-                </table>
-        </div>
-    </main>
-    <footer>
+    <label for="jsonFile">Input Json File Link</label>
+    <input type="link" id="jsonFile" name="jsonFile"><br><br>
+    <button type="button" onclick="GetJson()" id="GetJson">
+        Get json
+    </button>
+    <button type="button" onclick="remove()" id="remove">
+        Clear
+    </button>
 
-    </footer>
-    <script>
-        //FUNCTION TO GET JSON OBJECTS
-        function GetLaptops() {
-            $.ajax({
-                url: 'laptops.json',
-                type: 'GET',
-                datatype: 'json',
-                success: function (data) {
-                    DisplayLaptops(data);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(textStatus);
-                }
-            });
-        }
-        function DisplayLaptops(jsonFile) {
-            var image_source = "";
-            var output = "";
-            output += "<tr>";
-            output += "<th>ID</th>";
-            output += "<th>Brand</th>";
-            output += "<th>Price</th>";
-            output += "<th>CPU</th>";
-            output += "<th>GPU</th>";
-            output += "<th>RAM</th>";
-            output += "<th>Storage</th>";
-            output += "<th>OS</th>";
-            output += "</tr>";
-            $(jsonFile.laptops).each(function (index) {
-                output += "<tr>";
-                output += "<td>" + jsonFile.laptops[index].id + "</td>";
-                output += "<td>" + jsonFile.laptops[index].Brand + "</td>";
-                output += "<td>" + jsonFile.laptops[index].Price + "</td>";
-                output += "<td>" + jsonFile.laptops[index].CPU + "</td>";
-                output += "<td>" + jsonFile.laptops[index].GPU + "</td>";
-                output += "<td>" + jsonFile.laptops[index].RAM + "</td>";
-                output += "<td>" + jsonFile.laptops[index].Storage + "</td>";
-                output += "<td>" + jsonFile.laptops[index].OS + "</td>";
-                //image_source = jsonFile.laptops[index].photo;
-                output += "</tr>";
-            })
-            document.getElementById('laptopTable').innerHTML = output;
-        }
-    </script>
+    </form>
+    <hr>
+
+    <div id="output" class="output">
+
+    </div>
+
+    <hr>
+    <br>
 </body>
 
+<script>
+
+
+        
+//Json Processing
+function GetJson() {
+    var jsonDOC = document.getElementById("jsonFile").value;
+
+    if(jsonDOC == ""){
+        alert("Invalid Link");
+    }
+
+    $("#status").text("Started!");
+    $.getJSON(jsonDOC, function (json) {
+        displayJson(json);
+
+    }).fail(function () {
+        $("#status").text("Error!");
+    })
+    .always(function () {
+        $("#status").text("Completed!");
+    });
+}
+function displayJson(json) {
+
+    $.each( json.laptops, function( i, obj ) {
+          obj.Price += "$"; 
+    });
+
+    var div = document.getElementById("output");
+
+    var counter = 0;
+    for(const x in json.laptops){
+
+        //Creates new elements using dom maniuplation then adds info to those doms for each element inside the json file.
+
+        var output = document.createElement("p");
+        output.setAttribute("id", counter);
+        counter++;
+
+        output.innerHTML += "<strong>Brand: </strong>" +json.laptops[x].Brand + "<br>";
+        // output.innerHTML += "<strong>Price: </strong>" +json.laptops[x].Price + "<br>";
+        // output.innerHTML += "<strong>CPU: </strong>" +json.laptops[x].CPU + "<br>";
+        // output.innerHTML += "<strong>GPU: </strong>" +json.laptops[x].GPU + "<br>";
+        // output.innerHTML += "<strong>RAM: </strong>" +json.laptops[x].RAM + "<br>";
+        // output.innerHTML += "<strong>Storage: </strong>" +json.laptops[x].Storage + "<br>";
+        // output.innerHTML += "<strong>OS: </strong>" +json.laptops[x].OS + "<br>";
+        //output.innerHTML += "<img src=" + json.laptops[x].photo + " style=\"width:200px;height:200px;\">" + "<br><br><br><br>";
+        div.appendChild(output); 
+    }
+
+//Links
+
+//https://tyler-meira.github.io/Project02/laptops2.json
+//https://tyler-meira.github.io/Project02/project02.json
+//https://tyler-meira.github.io/Project02/project02(3).json
+//https://tyler-meira.github.io/Project02/project02(4).json
+
+
+
+// Index File
+//https://tyler-meira.github.io/Project02/index.html
+
+
+    $("#0").click(function() { 
+        alert("1 element clicked");
+    
+    });
+    $("#1").click(function() { 
+        alert("2nd element clicked");
+    
+    });
+    $("#2").click(function() { 
+        alert("3rd element cliked");
+    
+    });
+    $("#3").click(function() { 
+        alert("4th element clicked");
+    
+    });
+    $("#4").click(function() { 
+        alert("5th element clicked");
+    
+    });
+    $("#5").click(function() { 
+        alert("5th element clicked");
+    
+    });
+    
+}
+
+function remove(){
+    var div = document.getElementById("output");
+
+    for(var i = 0; i < 6; i++){
+        var remove = document.getElementById(i); 
+        div.removeChild(remove);
+    }
+}
+
+$( function() {
+    $( "#body" ).accordion();
+  } );
+
+</script>
 </html>
