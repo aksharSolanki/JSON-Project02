@@ -137,7 +137,6 @@
 
 
         $("#0").click(function () {
-            alert("1 element clicked");
             expandInfo(json, 0);
         });
         $("#1").click(function () {
@@ -164,16 +163,14 @@
     }
 
     function expandInfo(json, id) {
-        var info = document.createElement('p');
-        info = "";
-        var expand = document.getElementById('expand');
+        var info = "";
         info.innerHTML += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
         info.innerHTML += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
         info.innerHTML += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
         info.innerHTML += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
         info.innerHTML += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
         info.innerHTML += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
-        expand.appendChild(info);
+        $("[id=id]").append(info);
     }
 
     function remove() {
