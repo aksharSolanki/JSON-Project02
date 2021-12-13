@@ -157,15 +157,14 @@
 
     function expandInfo(json, id) {
         var info = "";
-        info += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
+        info+= "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
         info += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
         info += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
         info += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
         info += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
         info += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
         if(id == 0) {
-            //$("[id=0]").removeData(info);
-            $("[id=0]").append(info);
+            $("[id=0]").replaceWith(info);
         } else if(id == 1) {
             $("[id=1]").append(info);
         } else if(id == 2) {
