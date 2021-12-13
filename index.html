@@ -76,8 +76,6 @@
 
 <script>
 
-
-
     //Json Processing
     function GetJson() {
         var jsonDOC = document.getElementById("jsonFile").value;
@@ -144,37 +142,38 @@
         });
         $("#1").click(function () {
             alert("2nd element clicked");
-
+            expandInfo(json, 1);
         });
         $("#2").click(function () {
             alert("3rd element cliked");
-
+            expandInfo(json, 2);
         });
         $("#3").click(function () {
             alert("4th element clicked");
-
+            expandInfo(json, 3);
         });
         $("#4").click(function () {
             alert("5th element clicked");
-
+            expandInfo(json, 4);
         });
         $("#5").click(function () {
             alert("5th element clicked");
-
+            expandInfo(json, 5);
         });
 
     }
 
     function expandInfo(json, id) {
+        var info = document.createElement('p');
+        info = "";
         var expand = document.getElementById('expand');
-        var output = document.createElement('p');
-        output.innerHTML += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
-        output.innerHTML += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
-        output.innerHTML += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
-        output.innerHTML += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
-        output.innerHTML += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
-        output.innerHTML += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
-        expand.appendChild(output);
+        info.innerHTML += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
+        info.innerHTML += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
+        info.innerHTML += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
+        info.innerHTML += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
+        info.innerHTML += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
+        info.innerHTML += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
+        expand.appendChild(info);
     }
 
     function remove() {
