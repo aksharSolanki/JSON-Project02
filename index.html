@@ -136,8 +136,7 @@
         //https://tyler-meira.github.io/Project02/index.html
 
         $("#0").click(function () {
-            $("[id=1]").append("TEST");
-            // expandInfo(json, 0);
+            expandInfo(json, 0);
         });
         $("#1").click(function () {
             alert("2nd element clicked");
@@ -170,6 +169,7 @@
         info += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
         info += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
         info += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
+        $("[id=id]").append(info);
     }
 
     function remove() {
