@@ -93,7 +93,8 @@
             });
     }
     function displayJson(json) {
-
+        var counter = 0;
+        
         $.each(json.laptops, function (i, obj) {
             obj.Price += "$";
         });
@@ -101,7 +102,6 @@
         var div = document.getElementById("output");
 
         for (const x in json.laptops) {
-            var counter = 0;
 
             //Creates new elements using dom maniuplation then adds info to those doms for each element inside the json file.
 
