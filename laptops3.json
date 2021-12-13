@@ -1,0 +1,72 @@
+{
+    "laptops":[
+       {
+          "id":"0",
+          "Brand":"Acer Nitro 5",
+          "Price":"1,200",
+          "CPU":"Amd Ryzen 5",
+          "GPU":"Integrated",
+          "RAM":"8gb",
+          "Storage":"256gb",
+          "OS": "Windows 10",
+          "photo": "https://tyler-meira.github.io/Project02/Photos/AcerNitro5.jpg"
+       },
+       {
+        "id":"1",
+        "Brand":"HP Pavilion 15",
+        "Price":"789",
+        "CPU":"Intel Core i7",
+        "GPU":"NVIDIA GeForce GTX 1070",
+        "RAM":"16gb",
+        "Storage":"256tb",
+        "OS": "Windows 11",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/HpPav.jpg"
+        
+       },
+       {
+        "id":"2",
+        "Brand":"Dell Inspiron 15",
+        "Price":"400",
+        "CPU":"Intel Core i5",
+        "GPU":"Integrated",
+        "RAM":"32gb",
+        "Storage":"156gb",
+        "OS": "Windows 11",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/DellInsprion.jpg"
+       },
+       {
+        "id":"3",
+        "Brand":"Asus ROG Zephyrus",
+        "Price":"3,000",
+        "CPU":"Intel Core i7",
+        "GPU":"RTX 2080",
+        "RAM":"32gb",
+        "Storage":"512gb",
+        "OS": "Windows 10 Pro",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/AsusROGZ.jpg"
+       },
+       {
+        "id":"4",
+        "Brand":"Huawei Matebook D 15",
+        "Price":"1,200",
+        "CPU":"Intel i5 5th Generation",
+        "GPU":"Integrated",
+        "RAM":"8gb",
+        "Storage":"512gb",
+        "OS": "Windows 10",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/HuaweiMateBook.jpg"
+       },
+       {
+         "id":"5",
+         "Brand":"Asus X407MA",
+         "Price":"521",
+         "CPU":"Intel Core i3",
+         "GPU":"Integrated",
+         "RAM":"8gb",
+         "Storage":"256gb",
+         "OS": "Linux",
+         "photo": "https://tyler-meira.github.io/Project02/Photos/AsusX40MA.jpg"
+        }
+       
+    ]
+ }

@@ -1,0 +1,60 @@
+{
+    "laptops":[
+       {
+          "id":"0",
+          "Brand":"Mac Book Air",
+          "Price":"1,300",
+          "CPU":"M1",
+          "GPU":"Integrated",
+          "RAM":"16gb",
+          "Storage":"512gb",
+          "OS": "Mac Os",
+          "photo": "https://tyler-meira.github.io/Project02/Photos/Mac.jpg"
+       },
+       {
+        "id":"1",
+        "Brand":"Asus M515",
+        "Price":"955",
+        "CPU":"Ryzen 7 5000 Series",
+        "GPU":"Amd Radeon Graphics",
+        "RAM":"16gb",
+        "Storage":"1tb",
+        "OS": "Windows 10 Pro",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/Asus%20m515.jpg"
+        
+       },
+       {
+        "id":"2",
+        "Brand":"MSI GS66",
+        "Price":"1,299",
+        "CPU":"Intel i9",
+        "GPU":"Nvidia RTX 3080",
+        "RAM":"32gb",
+        "Storage":"256gb",
+        "OS": "Windows 11",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/MSI.jpg"
+       },
+       {
+        "id":"3",
+        "Brand":"HP EliteBook X360",
+        "Price":"826",
+        "CPU":"Intel i5 8th Generation",
+        "GPU":"Integrated",
+        "RAM":"8gb",
+        "Storage":"256gb",
+        "OS": "Windows 10",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/EliteBook.jpg"
+       },
+       {
+        "id":"4",
+        "Brand":"Dell XPS 15",
+        "Price":"1,899",
+        "CPU":"Intel i7",
+        "GPU":"Amd Radeon RX 6800",
+        "RAM":"32gb",
+        "Storage":"2tb",
+        "OS": "Ubuntu",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/XPS.jpg"
+       }
+    ]
+ }

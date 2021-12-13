@@ -1,0 +1,72 @@
+{
+    "laptops":[
+       {
+          "id":"0",
+          "Brand":"Razer Blade 15",
+          "Price":"1,500",
+          "CPU":"Intel Core i7",
+          "GPU":"NVIDIA GeForce GTX 1070",
+          "RAM":"16gb",
+          "Storage":"256gb",
+          "OS": "Windows 10",
+          "photo": "https://tyler-meira.github.io/Project02/Photos/RazerBlade15.jpg"
+       },
+       {
+        "id":"1",
+        "Brand":"MSI Stealh Thin",
+        "Price":"1,800",
+        "CPU":"Intel Core i7",
+        "GPU":"NVIDIA GeForce GTX 1070",
+        "RAM":"16gb",
+        "Storage":"512tb",
+        "OS": "Linux",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/MSIStealthThin.jpg"
+        
+       },
+       {
+        "id":"2",
+        "Brand":"Acer Predator",
+        "Price":"800",
+        "CPU":"Intel Core i7",
+        "GPU":"RTX 2080",
+        "RAM":"32gb",
+        "Storage":"1256gb",
+        "OS": "Windows 11",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/AcerPred.jpg"
+       },
+       {
+        "id":"3",
+        "Brand":"MSI GS75",
+        "Price":"2,100",
+        "CPU":"Intel Core i7",
+        "GPU":"RTX 2080",
+        "RAM":"32gb",
+        "Storage":"512gb",
+        "OS": "Windows 10 Pro",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/MSIGS75.jpg"
+       },
+       {
+        "id":"4",
+        "Brand":"Prostar P950RF",
+        "Price":"631",
+        "CPU":"Intel i5 5th Generation",
+        "GPU":"Integrated",
+        "RAM":"32gb",
+        "Storage":"2tb",
+        "OS": "Ubuntu",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/Prostar.jpg"
+       },
+       {
+         "id":"5",
+         "Brand":"Apple MacBook Pro 2018",
+         "Price":"2500",
+         "CPU":"Intel Core i7",
+         "GPU":"Integrated",
+         "RAM":"16gb",
+         "Storage":"256gb",
+         "OS": "Mac Os",
+         "photo": "https://tyler-meira.github.io/Project02/Photos/MacBookPro2018.jpg"
+        }
+       
+    ]
+ }

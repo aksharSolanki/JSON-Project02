@@ -1,0 +1,70 @@
+{
+    "laptops":[
+       {
+         "id":"0",
+          "Brand":"Dell XPS 13",
+          "Price":"1,049",
+          "CPU":"Intel i5 10th Generation",
+          "GPU":"AMD Radeon RX 6600",
+          "RAM":"8gb",
+          "Storage":"512gb",
+          "OS": "Windows 11 Pro",
+          "photo": "https://tyler-meira.github.io/Project02/Photos/XPS13.jpg"
+       },
+       {
+         "id":"1",
+        "Brand":"Acer Chromebook 713",
+        "Price":"759",
+        "CPU":"Intel i7 11th Generation",
+        "GPU":"Nvidia GTX 1660",
+        "RAM":"16gb",
+        "Storage":"256GB",
+        "OS": "CentOS",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/AcerChrome.jpg"
+       },
+       {
+         "id":"2",
+        "Brand":"Lenevo Thinkpad X1 Carbon",
+        "Price":"1,349",
+        "CPU":"Intel i9 11th Generation",
+        "GPU":"AMD Radeon RX Vega 64",
+        "RAM":"64GB",
+        "Storage":"2TB",
+        "OS": "Windows 10 Home",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/Lenevo.jpg"
+       },
+       {
+         "id":"3",
+        "Brand":"Alienware X17",
+        "Price":"2,299",
+        "CPU":"Intel i9 10th Generation",
+        "GPU":"Nvidia RTX 3060",
+        "RAM":"32GB",
+        "Storage":"512GB",
+        "OS": "Windows 11 Home",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/Alienware.jpg"
+       },
+       {
+         "id":"4",
+        "Brand":"HP Envy 13",
+        "Price":"979",
+        "CPU":"Intel i7 11th Generation",
+        "GPU":"AMD RX Vega 64",
+        "RAM":"16GB",
+        "Storage":"256GB",
+        "OS": "Windows 10 Student",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/HP.jpg"
+       },
+        {
+        "id":"5",
+        "Brand":"Acer Swift 3",
+        "Price":"899",
+        "CPU":"AMD Ryzen 7",
+        "GPU":"AMD Radeon",
+        "RAM":"8GB",
+        "Storage":"512GB",
+        "OS": "Windows 10 Student",
+        "photo": "https://tyler-meira.github.io/Project02/Photos/AcerSwift.jpg"
+       }
+    ]
+ }
