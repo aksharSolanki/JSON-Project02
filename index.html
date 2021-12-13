@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        
-            *{
-                text-align: center;
-                background-color: gainsboro;
-            }
-            button{
-                display:inline-block;
-                padding:0.35em 1.2em;
-                border:0.1em solid #FFFFFF;
-                margin:0 0.3em 0.3em 0;
-                border-radius:0.12em;
-                box-sizing: border-box;
-                text-decoration:none;
-                font-family:'Roboto',sans-serif;
-                font-weight:300;
-                color:#FFFFFF;
-                text-align:center;
-                transition: all 0.2s;
-                background-color: #000000;
-                }
-                button:hover{
-                color:#000000;
-                background-color:#FFFFFF;
-                }
-                .output{
-                    display: grid;
-                    grid-template-columns: auto auto auto auto;
-                    grid-gap: 10px;
-                }
-                p{
-                    border: solid;
-                    border-radius: 5%;
-                    padding: 7%;
-                    padding-bottom: 0%;
-                }
-                img{
-                    border: solid;
-                }
+<style>
+    * {
+        text-align: center;
+        background-color: gainsboro;
+    }
 
-    
-    </style>
+    button {
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        border: 0.1em solid #FFFFFF;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: #FFFFFF;
+        text-align: center;
+        transition: all 0.2s;
+        background-color: #000000;
+    }
+
+    button:hover {
+        color: #000000;
+        background-color: #FFFFFF;
+    }
+
+    .output {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+    }
+
+    p {
+        border: solid;
+        border-radius: 5%;
+        padding: 7%;
+        padding-bottom: 0%;
+    }
+
+    img {
+        border: solid;
+    }
+</style>
+
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -49,8 +52,8 @@
 <body>
     <h1>Laptop Index</h1>
     <hr>
-    <br>   
-    
+    <br>
+
 
     <label for="jsonFile">Input Json File Link</label>
     <input type="link" id="jsonFile" name="jsonFile"><br><br>
@@ -65,9 +68,8 @@
     <hr>
 
     <div id="output" class="output">
-
+        <div id="expand"></div>
     </div>
-
     <hr>
     <br>
 </body>
@@ -75,106 +77,119 @@
 <script>
 
 
-        
-//Json Processing
-function GetJson() {
-    var jsonDOC = document.getElementById("jsonFile").value;
 
-    if(jsonDOC == ""){
-        alert("Invalid Link");
+    //Json Processing
+    function GetJson() {
+        var jsonDOC = document.getElementById("jsonFile").value;
+
+        if (jsonDOC == "") {
+            alert("Invalid Link");
+        }
+
+        $("#status").text("Started!");
+        $.getJSON(jsonDOC, function (json) {
+            displayJson(json);
+
+        }).fail(function () {
+            $("#status").text("Error!");
+        })
+            .always(function () {
+                $("#status").text("Completed!");
+            });
+    }
+    function displayJson(json) {
+
+        $.each(json.laptops, function (i, obj) {
+            obj.Price += "$";
+        });
+
+        var div = document.getElementById("output");
+
+        var counter = 0;
+        for (const x in json.laptops) {
+
+            //Creates new elements using dom maniuplation then adds info to those doms for each element inside the json file.
+
+            var output = document.createElement("p");
+            output.setAttribute("id", counter);
+            counter++;
+
+            output.innerHTML += "<strong>Brand: </strong>" + json.laptops[x].Brand + "<br>";
+            // output.innerHTML += "<strong>Price: </strong>" +json.laptops[x].Price + "<br>";
+            // output.innerHTML += "<strong>CPU: </strong>" +json.laptops[x].CPU + "<br>";
+            // output.innerHTML += "<strong>GPU: </strong>" +json.laptops[x].GPU + "<br>";
+            // output.innerHTML += "<strong>RAM: </strong>" +json.laptops[x].RAM + "<br>";
+            // output.innerHTML += "<strong>Storage: </strong>" +json.laptops[x].Storage + "<br>";
+            // output.innerHTML += "<strong>OS: </strong>" +json.laptops[x].OS + "<br>";
+            //output.innerHTML += "<img src=" + json.laptops[x].photo + " style=\"width:200px;height:200px;\">" + "<br><br><br><br>";
+            div.appendChild(output);
+        }
+
+        //Links
+
+        //https://tyler-meira.github.io/Project02/laptops2.json
+        //https://tyler-meira.github.io/Project02/project02.json
+        //https://tyler-meira.github.io/Project02/project02(3).json
+        //https://tyler-meira.github.io/Project02/project02(4).json
+
+
+
+        // Index File
+        //https://tyler-meira.github.io/Project02/index.html
+
+
+        $("#0").click(function () {
+            alert("1 element clicked");
+            expandInfo(json, 0);
+        });
+        $("#1").click(function () {
+            alert("2nd element clicked");
+
+        });
+        $("#2").click(function () {
+            alert("3rd element cliked");
+
+        });
+        $("#3").click(function () {
+            alert("4th element clicked");
+
+        });
+        $("#4").click(function () {
+            alert("5th element clicked");
+
+        });
+        $("#5").click(function () {
+            alert("5th element clicked");
+
+        });
+
     }
 
-    $("#status").text("Started!");
-    $.getJSON(jsonDOC, function (json) {
-        displayJson(json);
-
-    }).fail(function () {
-        $("#status").text("Error!");
-    })
-    .always(function () {
-        $("#status").text("Completed!");
-    });
-}
-function displayJson(json) {
-
-    $.each( json.laptops, function( i, obj ) {
-          obj.Price += "$"; 
-    });
-
-    var div = document.getElementById("output");
-
-    var counter = 0;
-    for(const x in json.laptops){
-
-        //Creates new elements using dom maniuplation then adds info to those doms for each element inside the json file.
-
-        var output = document.createElement("p");
-        output.setAttribute("id", counter);
-        counter++;
-
-        output.innerHTML += "<strong>Brand: </strong>" +json.laptops[x].Brand + "<br>";
-        // output.innerHTML += "<strong>Price: </strong>" +json.laptops[x].Price + "<br>";
-        // output.innerHTML += "<strong>CPU: </strong>" +json.laptops[x].CPU + "<br>";
-        // output.innerHTML += "<strong>GPU: </strong>" +json.laptops[x].GPU + "<br>";
-        // output.innerHTML += "<strong>RAM: </strong>" +json.laptops[x].RAM + "<br>";
-        // output.innerHTML += "<strong>Storage: </strong>" +json.laptops[x].Storage + "<br>";
-        // output.innerHTML += "<strong>OS: </strong>" +json.laptops[x].OS + "<br>";
-        //output.innerHTML += "<img src=" + json.laptops[x].photo + " style=\"width:200px;height:200px;\">" + "<br><br><br><br>";
-        div.appendChild(output); 
+    function expandInfo(json, id) {
+        var expand = document.getElementById('expand');
+        var output = "";
+        output.innerHTML += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
+        output.innerHTML += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
+        output.innerHTML += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
+        output.innerHTML += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
+        output.innerHTML += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
+        output.innerHTML += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
+        expand.appendChild(output);
     }
 
-//Links
+    function remove() {
+        var div = document.getElementById("output");
 
-//https://tyler-meira.github.io/Project02/laptops2.json
-//https://tyler-meira.github.io/Project02/project02.json
-//https://tyler-meira.github.io/Project02/project02(3).json
-//https://tyler-meira.github.io/Project02/project02(4).json
-
-
-
-// Index File
-//https://tyler-meira.github.io/Project02/index.html
-
-
-    $("#0").click(function() { 
-        alert("1 element clicked");
-    
-    });
-    $("#1").click(function() { 
-        alert("2nd element clicked");
-    
-    });
-    $("#2").click(function() { 
-        alert("3rd element cliked");
-    
-    });
-    $("#3").click(function() { 
-        alert("4th element clicked");
-    
-    });
-    $("#4").click(function() { 
-        alert("5th element clicked");
-    
-    });
-    $("#5").click(function() { 
-        alert("5th element clicked");
-    
-    });
-    
-}
-
-function remove(){
-    var div = document.getElementById("output");
-
-    for(var i = 0; i < 6; i++){
-        var remove = document.getElementById(i); 
-        div.removeChild(remove);
+        for (var i = 0; i < 6; i++) {
+            var remove = document.getElementById(i);
+            div.removeChild(remove);
+        }
     }
-}
 
-$( function() {
-    $( "#body" ).accordion();
-  } );
+    $(function () {
+        $("#body").accordion();
+    });
 
 </script>
+
 </html>
