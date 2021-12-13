@@ -156,22 +156,25 @@
     }
 
     function expandInfo(json, id) {
-        var info = "";
-        info+= "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
-        info += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
-        info += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
-        info += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
-        info += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
-        info += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
-        if(id == 0) {
+        var info = document.createElement("p");
+        info.setAttribute("id", (id+1));
+        info.innerHTML += "<strong>Brand: </strong>" + json.laptops[x].Brand + "<br>";
+        info.innerHTML += "<img src=" + json.laptops[x].photo + " style=\"width:200px;height:200px;\">" + "<br><br>";
+        info.innerHTML += "<strong>Price: </strong>" + json.laptops[id].Price + "<br>";
+        info.innerHTML += "<strong>CPU: </strong>" + json.laptops[id].CPU + "<br>";
+        info.innerHTML += "<strong>GPU: </strong>" + json.laptops[id].GPU + "<br>";
+        info.innerHTML += "<strong>RAM: </strong>" + json.laptops[id].RAM + "<br>";
+        info.innerHTML += "<strong>Storage: </strong>" + json.laptops[id].Storage + "<br>";
+        info.innerHTML += "<strong>OS: </strong>" + json.laptops[id].OS + "<br>";
+        if (id == 0) {
             $("[id=0]").replaceWith(info);
-        } else if(id == 1) {
+        } else if (id == 1) {
             $("[id=1]").append(info);
-        } else if(id == 2) {
+        } else if (id == 2) {
             $("[id=2]").append(info);
-        } else if(id == 3) {
+        } else if (id == 3) {
             $("[id=3]").append(info);
-        } else if(id == 4) {
+        } else if (id == 4) {
             $("[id=4]").append(info);
         } else {
             $("[id=5]").append(info);
