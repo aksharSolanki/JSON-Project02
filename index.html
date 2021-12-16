@@ -1,4 +1,29 @@
 <!DOCTYPE html>
+<!--
+
+    // Group Project 02 // 
+
+    Members: Tyler, Akshar
+
+    Topic: Laptop Index
+
+    Due Date: Wednesday, Decemeber 13, 2021
+
+    // Links //
+
+        // Json Files // 
+
+        https://tyler-meira.github.io/Project02/laptops2.json
+        https://tyler-meira.github.io/Project02/project02.json
+        https://tyler-meira.github.io/Project02/project02(3).json
+        https://tyler-meira.github.io/Project02/project02(4).json
+
+        // Index File //
+
+        https://tyler-meira.github.io/Project02/index.html
+
+
+-->
 <html>
 <style>
     * {
@@ -54,12 +79,19 @@
     <hr>
     <br>
 
-
-    <label for="jsonFile">Input Json File Link</label>
-    <input type="link" id="jsonFile" name="jsonFile"><br><br>
-    <button type="button" onclick="GetJson()" id="GetJson">
-        Get json
+    <button type="button" onclick="buttonVar = 1; GetJson()">
+        Laptops 1
     </button>
+    <button type="button" onclick="buttonVar = 2; GetJson()">
+        Laptops 2
+    </button>
+    <button type="button" onclick="buttonVar = 3; GetJson()">
+        Laptops 3
+    </button>
+    <button type="button" onclick="buttonVar = 4; GetJson()">
+        Laptops 4
+    </button>
+    <br><br>
     <button type="button" onclick="remove()" id="remove">
         Clear
     </button>
@@ -74,14 +106,31 @@
 </body>
 
 <script>
+    var buttonVar = " ";
+    var jsonDOC1 = "https://tyler-meira.github.io/Project02/laptops2.json";
+    var jsonDOC2 = "https://tyler-meira.github.io/Project02/project02.json";
+    var jsonDOC3 = "https://tyler-meira.github.io/Project02/project02(3).json";
+    var jsonDOC4 = "https://tyler-meira.github.io/Project02/project02(4).json";
 
-    //Json Processing
     function GetJson() {
-        var jsonDOC = document.getElementById("jsonFile").value;
+
+        if(buttonVar == 1){
+            var jsonDOC = jsonDOC1;
+        }
+        if(buttonVar == 2){
+            var jsonDOC = jsonDOC2;
+        }
+        if(buttonVar == 3){
+            var jsonDOC = jsonDOC3;
+        }
+        if(buttonVar == 4){
+            var jsonDOC = jsonDOC4;
+        }
 
         if (jsonDOC == "") {
             alert("Invalid Link");
         }
+
 
         $("#status").text("Started!");
         $.getJSON(jsonDOC, function (json) {
@@ -116,17 +165,6 @@
             div.appendChild(output);
         }
 
-        //Links
-
-        //https://tyler-meira.github.io/Project02/laptops2.json
-        //https://tyler-meira.github.io/Project02/project02.json
-        //https://tyler-meira.github.io/Project02/project02(3).json
-        //https://tyler-meira.github.io/Project02/project02(4).json
-
-
-
-        // Index File
-        //https://tyler-meira.github.io/Project02/index.html
 
         $("#0").click(function () {
             var info = expandInfo(json, 0);
